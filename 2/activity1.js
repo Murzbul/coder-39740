@@ -20,6 +20,18 @@ const newList2 = Object.keys(objetos[1]);
 console.log(newList1);
 console.log(newList2);
 
+let alimentos = [];
+
+objetos.forEach(values => {
+   const list = Object.keys(values);
+   list.forEach(eleme => {
+      if(!alimentos.includes(eleme))
+      {
+          alimentos.push(eleme);
+      }
+   })
+})
+
 const newList3 = [ ...newList1, ...newList2 ];
 console.log(newList3);
 
