@@ -41,16 +41,24 @@ class UsersManager
 
 const main = async () =>
 {
-  const usersManager = new UsersManager();
+  try
+  {
+    const usersManager = new UsersManager();
 
-  await usersManager.loadData();
+    await usersManager.loadData();
 
-  await usersManager.createUser({name: "Andres", surname: "Martinez", age: 23, course: '312'});
-  await usersManager.createUser({name: "Noelia", surname: "Parra", age: 21, course: '312'});
-  await usersManager.createUser({name: "Marcos", surname: "Torres", age: 20, course: '312'});
+    const res = await usersManager.createUser({name: "Andres", surname: "Martinez", age: 23, course: '312'});
+    console.log(res);
+    await usersManager.createUser({name: "Noelia", surname: "Parra", age: 21, course: '312'});
+    await usersManager.createUser({name: "Marcos", surname: "Torres", age: 20, course: '312'});
 
-  const users = await usersManager.readUsers();
-  console.log(users);
+    const users = await usersManager.readUsers();
+    console.log(users);
+  }
+  catch (e)
+  {
+    console.log(e);
+  }
 }
 
 main();

@@ -1,7 +1,7 @@
 
 
 
-// let variablesDePrueba = 0;
+// let variablesDePrueba = 1;
 //
 // let variableAsignable = variablesDePrueba || "Sin Valor";
 // console.log(variableAsignable);

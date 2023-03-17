@@ -1,6 +1,6 @@
 
 let valoresOriginales = [1,2,3,4,5];
-let nuevosValores = valoresOriginales.map(x => x + 1); // [2,3,4,5,6]
+let nuevosValores = valoresOriginales.map(x => x + 1); // [3,4,5,5,6]
 console.log(nuevosValores);
 
 let otrosValores = valoresOriginales.map(x => x * 2);
