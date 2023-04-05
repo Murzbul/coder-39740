@@ -1,0 +1,45 @@
+<div>
+    <h1>Hola, {{name}}, como andas?</h1>
+
+    <form id="myForm" action="">
+        <label for="texto">Escribe un mensaje: </label>
+        <input type="text" id="texto" name="texto"/>
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+<script>
+    const socket = io();
+    socket.emit('message', 'Hola desde el client!!');
+
+    socket.on('evento_para_socket_individual', (data) =>
+    {
+        console.log(data);
+    });
+
+    socket.on('evento_para_todos_menos_el_socket_actual', (data) =>
+    {
+        console.log(data);
+    });
+
+    socket.on('evento_para_todos', (data) =>
+    {
+        console.log(data);
+    });
+
+    socket.on('chatRoom1', (data) =>
+    {
+        console.log(data);
+    });
+
+    const formulario = document.getElementById('myForm');
+
+    formulario.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const textoInput = document.getElementById("texto").value;
+
+      console.log(textoInput);
+      socket.emit('chatRoom1', textoInput);
+    });
+</script>
