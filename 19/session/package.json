@@ -1,0 +1,22 @@
+{
+  "name": "19_sessions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node_modules/.bin/nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
