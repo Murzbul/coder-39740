@@ -7,7 +7,7 @@
   "watch": [
     "src/*"
   ],
-  "exec": "node --inspect=0.0.0.0:9229 src/index.js",
+  "exec": "node src/index.js",
   "legacyWatch": true,
   "ext": "js"
 }

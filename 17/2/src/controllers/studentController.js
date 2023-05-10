@@ -34,7 +34,6 @@ export const update = async (req, res) =>
   const { id } = req.params;
 
   const manager = new StudentManager();
-
   const result = await manager.updateOne(id, req.body);
 
   res.send({ status: 'success', result, message: 'Student updated.' })

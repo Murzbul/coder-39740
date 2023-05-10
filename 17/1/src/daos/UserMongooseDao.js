@@ -20,11 +20,11 @@ class UserMongooseDao
     const userDocument = await userSchema.findOne({ _id: id });
 
     return {
-      id: document._id,
-      firstName: document.first_name,
-      lastName: document.last_name,
-      email: document.email,
-      gender: document.gender
+      id: userDocument._id,
+      firstName: userDocument.first_name,
+      lastName: userDocument.last_name,
+      email: userDocument.email,
+      gender: userDocument.gender
     }
   }
 
