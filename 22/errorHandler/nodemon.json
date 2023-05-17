@@ -1,0 +1,13 @@
+{
+  "verbose": true,
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules"
+  ],
+  "watch": [
+    "src/*"
+  ],
+  "exec": "node --inspect=0.0.0.0:9229 src/index.js",
+  "legacyWatch": true,
+  "ext": "js"
+}
