@@ -5,7 +5,7 @@ class StudentManager
   constructor()
   {
      this.studentDao = new StudentMongooseDao();
-     // this.courseDao = new UserMongooseDao();
+     // this.courseDao = new UserRepository();
   }
 
   async find() // getAll, find, list, getStudents
