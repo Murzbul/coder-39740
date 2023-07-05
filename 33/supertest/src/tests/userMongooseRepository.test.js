@@ -20,8 +20,9 @@ describe("Testing User Mongoose Repository", () => {
         db.drop();
         db.close();
     });
-    beforeEach(function () {
-        this.timeout(5000);
+    beforeEach(async function () {
+        this.timeout(2000);
+        await new Promise(resolve => setTimeout(resolve, 500));
     });
     it('El repositorio debe ser una instancia de UserMongooseRepository', function () {
         expect(this.userRepository instanceof UserMongooseRepository).to.be.ok;
