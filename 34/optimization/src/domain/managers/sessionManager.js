@@ -16,7 +16,7 @@ class SessionManager
 
     const user = await this.userRepository.getOneByEmail(email);
 
-    if(!user)
+    if(!user.email)
     {
       throw new Error('User dont exist.');
     }

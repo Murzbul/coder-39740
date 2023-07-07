@@ -17,7 +17,7 @@ class MongooseAdapter
 
     async drop()
     {
-      await this.connection.db.dropDatabase();
+      await this.connection.dropDatabase();
     }
 }
 
