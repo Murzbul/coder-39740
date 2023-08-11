@@ -1,0 +1,43 @@
+version: '3.6'
+
+services:
+  node:
+    container_name: coder_node_1
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./src:/app/src
+      - ./.env:/app/.env
+    networks:
+      - codernet
+
+  db:
+    container_name: coder_db_1
+    restart: always
+    image: bitnami/mongodb:4.2
+    ports:
+      - "27018:27017"
+    environment:
+      - MONGODB_ROOT_PASSWORD=123456
+      - MONGODB_USERNAME=coder
+      - MONGODB_PASSWORD=coder
+      - MONGODB_DATABASE=coder
+    networks:
+      - codernet
+
+  mail:
+    container_name: coder_mail_1
+    restart: always
+    image: mailhog/mailhog:latest
+    ports:
+      - "8025:8025"
+    networks:
+     - codernet
+
+networks:
+  codernet:
+    driver: "bridge"
